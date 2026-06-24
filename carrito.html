@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mas Vale-Mi Carrito</title>
+    <link rel="icon" type="image/png" href="masvale_logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+<body> 
+
+    
+
+
+       <header class="barra">
+  
+        <div class="logo">
+            <img src="masvale_logo.png" alt="logo">
+        </div>
+
+        <div class="hamburguer" id="hamburguer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="servicios.html">SERVICIOS</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="carrito.html">CARRITO</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="carrito">
+
+        <h1>MI CARRITO</h1>
+        <h2>Selecciona los servicios que necesitas para comenzar</h2>
+
+    
+        <div class="card-servicio">
+
+            <label class="selector">
+                <input type="checkbox" value="Manejo de Redes - $120.000">
+                <span class="circulo"></span>
+            </label>
+
+            <div class="contenido">
+                <h3>MANEJO DE REDES</h3>
+
+                <ul>
+                    <li>Planificación mensual</li>
+                    <li>Diseño de publicaciones</li>
+                    <li>Asesoramiento</li>
+                </ul>
+
+                <div class="precio">
+                    Desde:<br>
+                    $120.000/mes
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="card-servicio">
+
+            <label class="selector">
+                <input type="checkbox" value="Branding - $180.000">
+                <span class="circulo"></span>
+            </label>
+
+            <div class="contenido">
+                <h3>BRANDING</h3>
+
+                <ul>
+                    <li>Logo principal</li>
+                    <li>Paleta de colores</li>
+                    <li>Tipografías</li>
+                    <li>Manual básico de marca</li>
+                </ul>
+
+                <div class="precio">
+                    Desde:<br>
+                    $180.000
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-servicio">
+
+            <label class="selector">
+                <input type="checkbox" value="Diseños Personalizados - $40.000">
+                <span class="circulo"></span>
+            </label>
+
+            <div class="contenido">
+                <h3>DISEÑOS PERSONALIZADOS</h3>
+
+                <ul>
+                    <li>Flyers</li>
+                    <li>Invitaciones</li>
+                    <li>Packaging</li>
+                    <li>Banners</li>
+                </ul>
+
+                <div class="precio">
+                    Desde:<br>
+                    $40.000
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-servicio">
+
+            <div class="contenido">
+                <h3>EXTRAS</h3>
+
+                <label class="extra">
+                    <input type="checkbox" value="Diseño Logo - $50.000">
+                    <span class="circulo"></span>
+                    Diseño de Logo - $50.000
+                </label>
+
+                <label class="extra">
+                    <input type="checkbox" value="Manual de Marca - $30.000">
+                    <span class="circulo"></span>
+                    Manual de Marca - $30.000
+                </label>
+
+                <label class="extra">
+                    <input type="checkbox" value="Pack Stories - $20.000">
+                    <span class="circulo"></span>
+                    Pack Stories Instagram - $20.000
+                </label>
+
+                <label class="extra">
+                    <input type="checkbox" value="Packaging - $60.000">
+                    <span class="circulo"></span>
+                    Diseño de Packaging - $60.000
+                </label>
+            </div>
+
+        </div>
+
+        <div class="pago-resumen">
+
+            <div class="metodos">
+
+                <h3>PAGAR CON:</h3>
+
+                <button class="btn-pago">Mercado Pago</button>
+                <button class="btn-pago">Tarjeta Visa</button>
+                <button class="btn-pago">Otra Tarjeta</button>
+
+            </div>
+
+            <div class="resumen" id="resumen">
+                Selecciona servicios...
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="pop-up" id="popup">
+        <div class="popup-contenido">
+            <h2>¡Gracias por tu compra!</h2>
+            <p>En los proximos 5 dias habiles nos comunicaremos con vos 
+                para empezar tu proyecto tan soñado 
+             </p>   
+
+             <button onclick="cerrarPopup()">Cerrar</button>
+        </div>
+
+    </section>
+
+   <script>
+        let botones = document.querySelectorAll(".btn-pago");
+
+        for(let i = 0; i < botones.length; i++){
+
+            botones[i].addEventListener("click", function(){
+
+                // Mostrar popup
+                document.getElementById("popup").style.display = "flex";
+
+                // Desmarcar servicios
+                let checks = document.querySelectorAll("input[type='checkbox']");
+
+                for(let j = 0; j < checks.length; j++){
+                    checks[j].checked = false;
+                }
+
+                // Limpiar resumen
+                document.getElementById("resumen").innerHTML = "Selecciona servicios...";
+            });
+
+        }
+
+        function cerrarPopup(){
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+    <section class="historial">
+
+        <h2>HISTORIAL DE PEDIDOS</h2>
+
+        <div class="pedido">
+            <div class="pedido-info">
+                <h3>Branding Completo</h3>
+                <p>Pedido realizado: 12/03/2026</p>
+            </div>
+            <span class="estado completado">Completado</span>
+        </div>
+
+
+        <div class="pedido">
+            <div class="pedido-info">
+                <h3>Diseño de Packaging</h3>
+                <p>Pedido realizado: 25/04/2026</p>
+            </div>
+            <span class="estado completado">Completado</span>
+        </div>
+
+        <div class="pedido">
+            <div class="pedido-info">
+                <h3>Manejo de Redes</h3>
+                <p>Pedido realizado: 28/05/2026</p>
+            </div>
+            <span class="estado proceso">En proceso</span>
+        </div>
+
+    </section>
+
+    <section class="contacto">
+
+            <h2>CONTACTANOS y presupuesta tu proyecto</h2>
+
+            <form>
+
+                <input type="text" placeholder="Nombre">
+
+                <textarea placeholder="Servicio a realizar"></textarea>
+
+                <textarea placeholder="Información adicional importante"></textarea>
+
+                <button type="submit">
+                    ENVIAR CONSULTA
+                </button>
+
+            </form>
+
+    </section>
+
+    <script>
+
+        let checks = document.querySelectorAll("input[type='checkbox']");
+        let resumen = document.getElementById("resumen");
+
+        for(let i = 0; i < checks.length; i++){
+
+            checks[i].addEventListener("change", function(){
+
+                let texto = "<b>Servicios seleccionados:</b><br><br>";
+                let total = 0;
+
+                for(let j = 0; j < checks.length; j++){
+
+                    if(checks[j].checked){
+
+                        texto += "• " + checks[j].value + "<br>";
+
+                        let precio = checks[j].value.match(/\$([\d.]+)/);
+
+                        if(precio){
+                            total += Number(precio[1].replace(/\./g,""));
+                        }
+                    }
+                }
+
+                if(total == 0){
+                    resumen.innerHTML = "Selecciona servicios...";
+                }else{
+                    texto += "<br><b>Total: $" + total.toLocaleString("es-AR") + "</b>";
+                    resumen.innerHTML = texto;
+                }
+
+            });
+
+    }
+
+    </script>
+
+
+    <footer>
+         <div class="copyright">
+            <p>mas vale creativa</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+  </footer>
+        
+  <script src="script.js"></script>    
+
+
+</body>
